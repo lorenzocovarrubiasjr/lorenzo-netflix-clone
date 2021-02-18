@@ -11,11 +11,6 @@ function App() {
       <Banner key={9} />
       <Row title="Lorenzo's Picks" key={1} lorenzosPicks isLargeRow />
       <Row title="Trending Now" key={2} fetchUrl={requests.fetchTrending} />
-      <Row
-        title="Documentaries"
-        key={3}
-        fetchUrl={requests.fetchDocumentaries}
-      />
       <Row title="Top Rated" key={4} fetchUrl={requests.fetchTopRated} />
       <Row title="Action" key={5} fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedies" key={6} fetchUrl={requests.fetchComedyMovies} />
