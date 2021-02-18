@@ -1,39 +1,49 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { makeStyles } from "@material-ui/core/styles";
+import Dialog from "@material-ui/core/Dialog";
+import YouTube from "react-youtube";
+import MuiDialogContent from "@material-ui/core/DialogContent";
 import "./Banner.scss";
-import { BASE_URL, requests } from "../../requests";
+import { getBannerMovies } from "../../requests";
 
-const banner_base_url = "https://image.tmdb.org/t/p/original";
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: "#111",
+  },
+});
 
 function Banner() {
+  const classes = useStyles();
   const [movie, setMovie] = useState([]);
+  const [openPlay, setOpenPlay] = useState(false);
 
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios({
-        baseURL: BASE_URL,
-        url: requests.fetchDocumentaries,
-      });
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-    }
-
-    fetchData();
+    setMovie(
+      getBannerMovies[Math.floor(Math.random() * getBannerMovies.length)]
+    );
   }, []);
+
+  const handleClickPlay = () => setOpenPlay(true);
+  const handleClose = () => setOpenPlay(false);
 
   //Found on StackOverflow
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
+  const bannerOptions = {
+    height: "390",
+    width: "500",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   return (
     <header
       className="banner"
       style={{
-        backgroundImage: `url(${banner_base_url}${movie.backdrop_path})`,
+        backgroundImage: `url(${movie?.backdrop_path})`,
       }}
     >
       <div className="banner-content">
@@ -41,12 +51,20 @@ function Banner() {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner-buttons">
-          <button className="banner-btn">Play</button>
+          <button className="banner-btn" onClick={handleClickPlay}>
+            Play
+          </button>
           <button className="banner-btn">My List</button>
         </div>
+        <Dialog onClose={handleClose} open={openPlay}>
+          <MuiDialogContent className={classes.root}>
+            <YouTube videoId={movie?.videoId} opts={bannerOptions} />
+          </MuiDialogContent>
+        </Dialog>
 
         <h1 className="banner-desc">{truncate(movie?.overview, 200)}</h1>
       </div>
+      <div className="banner-bottom-fade"></div>
     </header>
   );
 }

@@ -8,8 +8,10 @@
 
   .banner-content {
     margin-left: 35px;
-    padding-top: 150px;
+    padding-top: 180px;
     height: 200px;
+    position: relative;
+    z-index: 2;
 
     .banner-title {
       font-size: 3rem;
@@ -43,5 +45,23 @@
       max-width: 360px;
       height: 80px;
     }
+
+    .banner-dialog-content {
+      background-color: #111;
+    }
+  }
+
+  .banner-bottom-fade {
+    height: 8rem;
+    width: 100%;
+    position: relative;
+    top: -108px;
+    z-index: 1;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.61),
+      #111
+    );
   }
 }
