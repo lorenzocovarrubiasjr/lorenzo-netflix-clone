@@ -18,6 +18,7 @@ function Row({ title, fetchUrl, isLargeRow, lorenzosPicks }) {
         const request = await axios({ url: fetchUrl, baseURL: BASE_URL });
         setMovies(request.data.results);
       }
+
       fetchData();
     }
     if (lorenzosPicks) {
@@ -57,9 +58,9 @@ function Row({ title, fetchUrl, isLargeRow, lorenzosPicks }) {
     <div className="row">
       <h2 className="row-title">{title}</h2>
       <div className="posters-row">
-        {movies.map((movie) => (
+        {movies.map((movie, index) => (
           <img
-            key={movie.id}
+            key={Math.floor(Math.random() * movie.id)}
             src={
               lorenzosPicks
                 ? movie.poster_path

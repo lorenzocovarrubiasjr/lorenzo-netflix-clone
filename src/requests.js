@@ -13,6 +13,7 @@ export const requests = {
 };
 
 export const biboMovie = {
+  id: "1000001",
   name: "Blood In Blood Out",
   videoId: "NMj89zgI8Yc",
   backdrop_path:
@@ -23,6 +24,7 @@ export const biboMovie = {
 };
 
 export const passionOfTheChrist = {
+  id: "1000002",
   name: "Passion of the Christ",
   backdrop_path:
     "https://www.themoviedb.org/t/p/original/rplJDpuEI5Gr34LnKOl1XLg9zIT.jpg",
@@ -33,6 +35,7 @@ export const passionOfTheChrist = {
 };
 
 export const menaceToSociety = {
+  id: "1000003",
   name: "Menace To Society",
   backdrop_path:
     "https://www.themoviedb.org/t/p/original/dkGmpYzDzuyk8q3mzr3kI2a6urV.jpg",
@@ -43,6 +46,7 @@ export const menaceToSociety = {
 };
 
 export const theImitationGame = {
+  id: "1000004",
   name: "The Imitation Game",
   backdrop_path:
     "https://www.themoviedb.org/t/p/original/caQp2MhwfrTYGqVr7d9ayn8tqQ7.jpg",
@@ -53,10 +57,25 @@ export const theImitationGame = {
 };
 
 export const theBlindSide = {
-  name: "Passion of the Christ",
-  backdrop_path: "",
-  poster_path: "",
-  overview: "",
+  id: "1000005",
+  name: "the Blind Side",
+  backdrop_path:
+    "https://www.themoviedb.org/t/p/original/hXx7BOsj0B5GHSiqFvAvqAvK4kj.jpg",
+  poster_path:
+    "https://www.themoviedb.org/t/p/w220_and_h330_face/1KGdBeBodncaSoHjUDe8SA6o26n.jpg",
+  overview:
+    "The story of Michael Oher, a homeless and traumatized boy who became an All American football player and first round NFL draft pick with the help of a caring woman and her family.",
+};
+
+export const hiddenFigures = {
+  id: "1000006",
+  name: "Hidden Figures",
+  backdrop_path:
+    "https://www.themoviedb.org/t/p/original/qXNOzkhQxdaP8qKRtcvxHa8M49h.jpg",
+  poster_path:
+    "https://www.themoviedb.org/t/p/w220_and_h330_face/9lfz2W2uGjyow3am00rsPJ8iOyq.jpg",
+  overview:
+    "The untold story of Katherine G. Johnson, Dorothy Vaughan and Mary Jackson – brilliant African-American women working at NASA and serving as the brains behind one of the greatest operations in history – the launch of astronaut John Glenn into orbit. The visionary trio crossed all gender and race lines to inspire generations to dream big.",
 };
 
 export const getBannerMovies = [biboMovie];

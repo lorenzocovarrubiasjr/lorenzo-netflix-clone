@@ -44,8 +44,10 @@ function Banner() {
       className="banner"
       style={{
         backgroundImage: `url(${movie?.backdrop_path})`,
+        backgroundPosition: "top right",
       }}
     >
+      <div className="banner-top-fade"></div>
       <div className="banner-content">
         <h1 className="banner-title">
           {movie?.title || movie?.name || movie?.original_name}

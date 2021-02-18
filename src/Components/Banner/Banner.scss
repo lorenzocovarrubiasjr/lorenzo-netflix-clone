@@ -8,7 +8,7 @@
 
   .banner-content {
     margin-left: 35px;
-    padding-top: 180px;
+    padding-top: 130px;
     height: 200px;
     position: relative;
     z-index: 2;
@@ -49,6 +49,19 @@
     .banner-dialog-content {
       background-color: #111;
     }
+  }
+
+  .banner-top-fade {
+    height: 4rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(
+      180deg,
+      #111,
+      rgba(37, 37, 37, 0.61),
+      transparent
+    );
   }
 
   .banner-bottom-fade {
